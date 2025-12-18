@@ -1,29 +1,69 @@
 // src/App.jsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { songData } from './data/songs'; 
+import { songData as initialSongs } from './data/songs'; 
 
 import Sidebar from './components/Sidebar';
 import PlayerBar from './components/Playerbar';
 import Home from './components/Home';
 import Library from './components/Library';
 import PlaylistDetail from './components/PlaylistDetail'; 
+import Login from './components/Login'; // Pastikan kamu sudah membuat file ini
 
 function App() {
-  // --- STATE AUDIO ---
+  //STATE AUTHENTICATION
+  const [user, setUser] = useState(null);
+
+  //STATE LIBRARY(Admin CRUD)
+  const [songs, setSongs] = useState(initialSongs);
+
+  //STATE AUDIO
   const [currentSong, setCurrentSong] = useState(null); 
   const [isPlaying, setIsPlaying] = useState(false);
   const [queue, setQueue] = useState([]); 
   const [currentIndex, setCurrentIndex] = useState(-1);
 
-  // --- STATE PLAYLIST (Updated) ---
-  const [playlists, setPlaylists] = useState([
-    // Tambahkan array 'items' kosong untuk menampung lagu
-    { id: 1, name: "Ultraman", description: "MC Mode😈", items: [] },
-    { id: 2, name: "Kamen Rider", description: "KASIH PAHAM ADVENT🥶", items: [] }
-  ]);
+  //STATE PLAYLIST
+  const [playlists, setPlaylists] = useState([]);
 
-  // --- FUNGSI AUDIO (Play, Next, Prev) ---
+  //LOGIKA LOGIN/LOGOUT
+  const handleLogin = (userData) => {
+    setUser(userData);
+    localStorage.setItem('tokuUser', JSON.stringify(userData));
+  };
+
+  const handleLogout = () => {
+    setUser(null);
+    localStorage.removeItem('tokuUser');
+  };
+
+  useEffect(() => {
+    const savedUser = localStorage.getItem('tokuUser');
+    if (savedUser) setUser(JSON.parse(savedUser));
+  }, []);
+
+  //FUNGSI ADMIN (CRUD Library)
+  const addSong = (newSong) => {
+    const songWithId = { ...newSong, id: Date.now() };
+    setSongs([...songs, songWithId]);
+    alert("Kisah berhasil ditambahkan ke library!");
+  };
+
+  const editSong = (id, updatedData) => {
+    setSongs(songs.map(s => s.id === id ? { ...s, ...updatedData } : s));
+  };
+
+  const deleteSong = (id) => {
+    if (window.confirm("Yakin ingin menghapus kisah ini dari library?")) {
+      setSongs(songs.filter(s => s.id !== id));
+      if (currentSong?.id === id) {
+        setCurrentSong(null);
+        setIsPlaying(false);
+      }
+    }
+  };
+
+  //FUNGSI AUDIO
   const handlePlaySong = (clickedSong, allSongs) => {
     setCurrentSong(clickedSong);
     const sameGenreSongs = allSongs.filter(s => s.genre === clickedSong.genre);
@@ -32,37 +72,28 @@ function App() {
     otherSongs.sort((a, b) => a.id - b.id);
     const newQueue = [...sameGenreSongs, ...otherSongs];
     setQueue(newQueue); 
-    const newIndex = allSongs.findIndex((s) => s.id === clickedSong.id);
+    const newIndex = newQueue.findIndex((s) => s.id === clickedSong.id);
     setCurrentIndex(newIndex);
     setIsPlaying(true);
   };
 
   const handleNext = () => {
-    if (currentIndex < queue.length - 1) {
-      const nextIndex = currentIndex + 1;
-      setCurrentIndex(nextIndex);
-      setCurrentSong(queue[nextIndex]);
-    } else {
-      setCurrentIndex(0);
-      setCurrentSong(queue[0]);
-    }
+    if (queue.length === 0) return;
+    const nextIndex = (currentIndex + 1) % queue.length;
+    setCurrentIndex(nextIndex);
+    setCurrentSong(queue[nextIndex]);
     setIsPlaying(true);
   };
 
   const handlePrev = () => {
-    if (currentIndex > 0) {
-      const prevIndex = currentIndex - 1;
-      setCurrentIndex(prevIndex);
-      setCurrentSong(queue[prevIndex]);
-    } else {
-      const lastIndex = queue.length - 1;
-      setCurrentIndex(lastIndex);
-      setCurrentSong(queue[lastIndex]);
-    }
-      setIsPlaying(true);
+    if (queue.length === 0) return;
+    const prevIndex = (currentIndex - 1 + queue.length) % queue.length;
+    setCurrentIndex(prevIndex);
+    setCurrentSong(queue[prevIndex]);
+    setIsPlaying(true);
   };
 
-  // --- FUNGSI PLAYLIST (Create & Add Song) ---
+  //FUNGSI PLAYLIST
   const createPlaylist = () => {
     const name = prompt("Nama Playlist Baru:");
     if (name) {
@@ -75,22 +106,34 @@ function App() {
     setPlaylists(prevPlaylists => 
       prevPlaylists.map(pl => {
         if (pl.id === playlistId) {
-          // Cek apakah lagu sudah ada di playlist (opsional, biar gak dobel)
-          const isExist = pl.items.find(item => item.id === song.id);
-          if (isExist) {
-            alert("Lagu sudah ada di playlist ini!");
+          if (pl.items.find(item => item.id === song.id)) {
+            alert("Lagu sudah ada di playlist!");
             return pl;
           }
-          
-          // LOGIKA STACK: [Lagu Baru, ...Lagu Lama]
-          // Lagu baru ditaruh DI DEPAN (Index 0), lagu lama kegeser ke bawah.
           return { ...pl, items: [song, ...pl.items] }; 
         }
         return pl;
       })
     );
-    alert(`Berhasil menambahkan ke playlist!`);
   };
+
+  const removeFromPlaylist = (playlistId, songId) => {
+    if (window.confirm("Hapus dari playlist?")) {
+      setPlaylists(prevPlaylists => 
+        prevPlaylists.map(pl => {
+          if (pl.id === playlistId) {
+            return { ...pl, items: pl.items.filter(item => item.id !== songId) };
+          }
+          return pl;
+        })
+      );
+    }
+  };
+
+  //PROTEKSI HALAMAN
+  if (!user) {
+    return <Login onLogin={handleLogin} />;
+  }
 
   return (
     <BrowserRouter>
@@ -98,7 +141,12 @@ function App() {
         <div className='h-full w-full bg-amber-50 flex flex-wrap justify-start font-playG'>
           <div className='bg-green-800 h-9/10 flex w-full flex-nowrap justify-start items-stretch px-2 gap-2'>
             
-            <Sidebar playlists={playlists} onCreatePlaylist={createPlaylist} />
+            <Sidebar 
+                user={user} 
+                onLogout={handleLogout} 
+                playlists={playlists} 
+                onCreatePlaylist={createPlaylist} 
+            />
             
             <div className="flex-1 overflow-hidden h-full bg-neutral-900 rounded-lg">
               <Routes>
@@ -106,10 +154,15 @@ function App() {
                   path="/" 
                   element={
                     <Home 
-                      songs={songData} 
+                      user={user}
+                      onLogout={handleLogout}
+                      songs={songs} 
                       onPlay={handlePlaySong} 
-                      playlists={playlists}         // Kirim info playlist
-                      onAddToPlaylist={addToPlaylist} // Kirim fungsi tambah
+                      playlists={playlists}
+                      onAddToPlaylist={addToPlaylist}
+                      onDeleteSong={deleteSong} // Fungsi Admin
+                      onEditSong={editSong}     // Fungsi Admin
+                      onAddSong={addSong}       // Fungsi Admin
                     />
                   } 
                 />
@@ -121,7 +174,8 @@ function App() {
                   element={
                     <PlaylistDetail 
                       playlists={playlists} 
-                      onPlaySong={handlePlaySong} // Kirim fungsi play agar bisa putar dari playlist
+                      onPlaySong={handlePlaySong} 
+                      onRemoveFromPlaylist={removeFromPlaylist}
                     />
                   } 
                 />

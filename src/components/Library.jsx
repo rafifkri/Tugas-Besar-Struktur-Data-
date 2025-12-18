@@ -3,7 +3,7 @@ import React from "react";
 const Library = () => {
     return(
         <div className='bg-neutral-900 h-138 w-full ml-1 rounded-lg flex flex-wrap justify-between'>
-            {/* nav-main start (Search Bar dan Avatar) */}
+            {/* nav-main start*/}
         <form className="pl-2 max-w-md mx-auto mt-3"> 
           <label htmlFor="search" className="block mb-2.5 text-sm font-medium text-heading sr-only text-neutral-100 ">Search</label>
           <div className="relative">
@@ -13,7 +13,7 @@ const Library = () => {
             <input type="search" id="search" className="font-playG w-full p-2 ps-9 bg-neutral-700 border-default-medium text-heading text-neutral-50 text-sm rounded-full focus:ring-brand focus:border-brand shadow-xs placeholder:text-body hover:bg-neutral-800 transition delay-150 duration-200 ease-in-out" placeholder="Cari Playlist Kink?" required />
           </div>
         </form>
-        {/* Avatar/Tooltip */}
+        {/*Tooltip*/}
         <div className="relative group inline-block mr-4 mt-3.5">
           <button>
             <img className="w-10 h-10 rounded-full" src="img\Axcel-berpikir-keras.jpeg" alt="Medium avatar"/>
@@ -30,9 +30,6 @@ const Library = () => {
           <div className='w-50 h-55 bg-amber-100 rounded-lg mb-5 hover:drop-shadow-lg'></div>
           <div className='w-50 h-55 bg-amber-100 rounded-lg mb-5 hover:drop-shadow-lg'></div>
           <div className='w-50 h-55 bg-amber-100 rounded-lg mb-5 hover:drop-shadow-lg'></div>
-          
-          
-          {/* Tambahkan lebih banyak item grid di sini */}
         </div>
       </div>
       {/* hero-main end */}

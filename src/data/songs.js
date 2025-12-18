@@ -6,8 +6,7 @@ export const songData = [
     artist: "Tiga",
     genre : "Ultraman",
     audioSrc: "/music/(Brave Love, Tiga) Ultraman Tiga ending song - lyrics - UltraSong Lyrics.mp3", // Pastikan file ada di folder public/music/
-    imageSrc: "/covers/Brave_Love_TIGA.svg", // Pastikan file ada di folder public/covers/
-    duration: "3:37"
+    imageSrc: "/covers/Brave_Love_TIGA.svg" // Pastikan file ada di folder public/covers/
   },
   {
     id: 2,
@@ -15,8 +14,7 @@ export const songData = [
     artist: "Ryuki",
     genre : "Kamen Rider",
     audioSrc: "/music/Alive A life - Rica Matsumoto.mp3",
-    imageSrc: "/covers/Alive_A_life_Single.svg",
-    duration: "4:20"
+    imageSrc: "/covers/Alive_A_life_Single.svg"
   },
   {
     id: 3,
@@ -24,8 +22,7 @@ export const songData = [
     artist: "Gaia",
     genre : "Ultraman",
     audioSrc: "/music/Beat on Dream on (Ultraman Gaia Ending) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/Beat_on_Dream_on.svg",
-    duration: "3:57"
+    imageSrc: "/covers/Beat_on_Dream_on.svg"
   },
   {
     id: 4,
@@ -33,8 +30,7 @@ export const songData = [
     artist: "Taiga",
     genre : "Ultraman",
     audioSrc: "/music/Buddy, steady, go! - Takuma Terashima.mp3",
-    imageSrc: "/covers/Buddy_Steady_go.svg",
-    duration: "4:13"
+    imageSrc: "/covers/Buddy_Steady_go.svg"
   },
   {
     id: 5,
@@ -42,8 +38,7 @@ export const songData = [
     artist: "Nexus",
     genre : "Ultraman",
     audioSrc: "/music/Eiyuu (Ultraman Nexus Operning) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/eiyuu.svg",
-    duration: "3:21"
+    imageSrc: "/covers/eiyuu.svg"
   },
   {
     id: 6,
@@ -51,8 +46,7 @@ export const songData = [
     artist: "Ginga",
     genre : "Ultraman",
     audioSrc: "/music/Ginga No Uta (Ultraman ginga Opening) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/Ginga_no_Uta.svg",
-    duration: "4:07"
+    imageSrc: "/covers/Ginga_no_Uta.svg"
   },
   {
     id: 7,
@@ -60,8 +54,7 @@ export const songData = [
     artist: "Decade",
     genre : "Kamen Rider",
     audioSrc: "/music/Journey through the Decade - GACKT.mp3",
-    imageSrc: "/covers/Journey_Through_the_Decade_CD_Cover.svg",
-    duration: "4:32"
+    imageSrc: "/covers/Journey_Through_the_Decade_CD_Cover.svg"
   },
   {
     id: 8,
@@ -69,8 +62,7 @@ export const songData = [
     artist: "Faiz '555' ",
     genre : "Kamen Rider",
     audioSrc: "/music/Kamen Rider 555_Faiz OpISSA - Justiφ'sLirik+Terjemahan Bahasa Indonesia. - TOKUNIME MUSIC.mp3",
-    imageSrc: "/covers/555_Poster.svg",
-    duration: "3:43"
+    imageSrc: "/covers/555_Poster.svg"
   },
   {
     id: 9,
@@ -78,8 +70,7 @@ export const songData = [
     artist: "Ichigo",
     genre : "Kamen Rider",
     audioSrc: "/music/Kamen Rider Ichigo Opening Song [Let's Go!! Rider Kick - Koichi Fuji] Lirik Dan Terjemahan - ZIHANQR-MUSIC.mp3",
-    imageSrc: "/covers/maxresdefault.svg",
-    duration: "2:28"
+    imageSrc: "/covers/maxresdefault.svg"
   },
   {
     id: 10,
@@ -87,8 +78,7 @@ export const songData = [
     artist: "Dyna",
     genre : "Ultraman",
     audioSrc: "/music/Kimi Dake O Mamoritai (Ultraman Dyna Ending) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/Kimi_Dake_o_Mamoritai_22.svg",
-    duration: "4:30"
+    imageSrc: "/covers/Kimi_Dake_o_Mamoritai_22.svg"
   },
   {
     id: 11,
@@ -96,8 +86,7 @@ export const songData = [
     artist: "RX",
     genre : "Kamen Rider",
     audioSrc: "/music/Ksatria Batang Hitam Intro - fluxcup institute.mp3",
-    imageSrc: "/covers/rx.svg",
-    duration: "1:34"
+    imageSrc: "/covers/rx.svg"
   },
   {
     id: 12,
@@ -105,8 +94,7 @@ export const songData = [
     artist: "Gaia",
     genre : "Ultraman",
     audioSrc: "/music/Lovi'n You Lovi'n Me (Ultraman Gaia Ending) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/LovinYouLovinMe.svg",
-    duration: "4:25"
+    imageSrc: "/covers/LovinYouLovinMe.svg"
   },
   {
     id: 13,
@@ -114,8 +102,7 @@ export const songData = [
     artist: "All Ultra",
     genre : "Ultraman",
     audioSrc: "/music/Miracle Of Ultra (Project DMM) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/MOU.jpg",
-    duration: "5:30"
+    imageSrc: "/covers/MOU.jpg"
   },
   {
     id: 14,
@@ -123,8 +110,7 @@ export const songData = [
     artist: "Orb",
     genre : "Ultraman",
     audioSrc: "/music/Orb No Inori (Ultraman Orb Opening) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/Orb.svg",
-    duration: "5:19"
+    imageSrc: "/covers/Orb.svg"
   },
   {
     id: 15,
@@ -132,8 +118,7 @@ export const songData = [
     artist: "Power Ranger",
     genre : "Super Sentai",
     audioSrc: "/music/POWER RANGERS MIGHTY MORPHIN (Opening) - ROCK COVER by ZerosiX park - Zerosix Park.mp3",
-    imageSrc: "/covers/Mighty_Morphin_Power_Rangers.jpeg",
-    duration: "3:32"
+    imageSrc: "/covers/Mighty_Morphin_Power_Rangers.jpeg"
   },
   {
     id: 16,
@@ -141,8 +126,7 @@ export const songData = [
     artist: "Decker",
     genre : "Ultraman",
     audioSrc: "/music/SCREEN mode「Wake up Decker!」『ウルトラマンデッカー』オープニング主題歌 林勇  太田雅友  UltramanDecker - SCREEN mode.mp3",
-    imageSrc: "/covers/Wake_up_Decker.jpeg",
-    duration: "4:00"
+    imageSrc: "/covers/Wake_up_Decker.jpeg"
   },
   {
     id: 17,
@@ -150,8 +134,7 @@ export const songData = [
     artist: "Cosmos",
     genre : "Ultraman",
     audioSrc: "/music/Something you can do (Ultraman cosmos Ending) - Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/Ultraman-Cosmos.jpeg",
-    duration: "5:00"
+    imageSrc: "/covers/Ultraman-Cosmos.jpeg"
   },
   {
     id: 18,
@@ -159,8 +142,7 @@ export const songData = [
     artist: "Cosmos",
     genre : "Ultraman",
     audioSrc: "/music/Spirit (Ultraman Cosmos Opening) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/Ultraman-Cosmos.jpeg",
-    duration: "3:49"
+    imageSrc: "/covers/Ultraman-Cosmos.jpeg"
   },
   {
     id: 19,
@@ -168,8 +150,7 @@ export const songData = [
     artist: "Dyna",
     genre : "Ultraman",
     audioSrc: "/music/Ultraman Dyna opening (Lyrics) - Ultra Lyrics.mp3",
-    imageSrc: "/covers/Ultraman_Dyna.jpeg",
-    duration: "4:12"
+    imageSrc: "/covers/Ultraman_Dyna.jpeg"
   },
   {
     id: 20,
@@ -177,8 +158,7 @@ export const songData = [
     artist: "Max",
     genre : "Ultraman",
     audioSrc: "/music/Ultraman Max Opening (Lyrics) - Ultra Lyrics.mp3",
-    imageSrc: "/covers/Ultraman-Max.jpeg",
-    duration: "3:14"
+    imageSrc: "/covers/Ultraman-Max.jpeg"
   },
   {
     id: 21,
@@ -186,26 +166,23 @@ export const songData = [
     artist: "Zero",
     genre : "Ultraman",
     audioSrc: "/music/Ultraman Zero - Opening FULL〘Susume! Ultraman Zero〙 by Voyager - 95Studio.mp3",
-    imageSrc: "/covers/Ultraman_Zero_The_Chronicle.jpeg",
-    duration: "4:30"
+    imageSrc: "/covers/Ultraman_Zero_The_Chronicle.jpeg"
   },
   {
-    id: 21,
+    id: 22,
     title: "Ultraman Mebius",
     artist: "Mebius",
     genre : "Ultraman",
     audioSrc: "/music/Urutoraman Mebiusu (Ultraman Mebius Opening) Lyrics - Ultra Lyrics.mp3",
-    imageSrc: "/covers/UltramanMebiusu.jpg",
-    duration: "4:57"
+    imageSrc: "/covers/UltramanMebiusu.jpg"
   },
   {
-    id: 22,
+    id: 23,
     title: "Take Me Higher",
     artist: "Tiga",
     genre : "Ultraman",
     audioSrc: "/music/V6 _ TAKE ME HIGHER.mp3",
-    imageSrc: "/covers/Tiga_Ultra_Flare.jpeg",
-    duration: "4:46"
+    imageSrc: "/covers/Tiga_Ultra_Flare.jpeg"
   }
 
   // Tambahkan lagu lain sesuka hati...
