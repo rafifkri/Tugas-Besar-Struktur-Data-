@@ -29,7 +29,7 @@ Proyek ini merupakan **Tugas Besar Mata Kuliah Struktur Data** yang mengimplemen
 
 ### Admin
 - Login sebagai admin
-- Mengelola data lagu (tambah & edit)
+- Mengelola data lagu (tambah & hapus)
 - Melihat seluruh playlist (keterbatasan sistem)
 
 >  Catatan: Pada versi ini, playlist user masih dapat terlihat di halaman admin karena belum ada pemisahan data berdasarkan role.
