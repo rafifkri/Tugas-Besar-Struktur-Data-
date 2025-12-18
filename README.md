@@ -98,7 +98,7 @@ Contoh konsep:
 ---
 
 ## Kesimpulan
-Aplikasi ini berhasil menerapkan konsep **Array** dan **Queue (FIFO)** dalam sistem pemutaran lagu berbasis genre. Meskipun belum mengimplementasikan struktur data kompleks seperti Linked List, Stack, Tree, dan Graph, proyek ini sudah memenuhi tujuan pembelajaran dengan studi kasus yang relevan dan mudah dipahami.
+WEB ini berhasil menerapkan konsep **Array**, **Queue (FIFO)**, **circular doubly linked list**, **Multi Linked List** dalam sistem pemutaran lagu berbasis genre. Meskipun belum mengimplementasikan struktur data kompleks seperti Linked List, Stack, Tree, dan Graph, proyek ini sudah memenuhi tujuan pembelajaran dengan studi kasus yang relevan dan mudah dipahami.
 
 ---
 
